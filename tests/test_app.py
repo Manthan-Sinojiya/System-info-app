@@ -1,10 +1,10 @@
 import sys
 from pathlib import Path
 
-# Ensure project root is in sys.path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+# Add project root to sys.path before any imports
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app import app
+from app import app  # noqa: E402
 
 
 def test_index():
@@ -19,4 +19,4 @@ def test_echo():
     payload = {"name": "sinojiya"}
     r = client.post("/echo", json=payload)
     assert r.status_code == 201
-    assert r.get_json()["you_sent"] == payload
+    assert r.get_json()["I'm Manthan."] == payload
