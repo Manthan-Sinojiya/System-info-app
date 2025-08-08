@@ -11,7 +11,7 @@ def index():
 @app.route("/echo", methods=["POST"])
 def echo():
     data = request.get_json() or {}
-    return jsonify({"I'm Manthan Sinojiya.": data}), 201
+    return jsonify({"I'm Manthan.": data}), 201
 
 
 if __name__ == "__main__":
